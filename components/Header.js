@@ -11,19 +11,32 @@ import {
 
 import Socials from "../components/Socials"
 import { useRouter } from "next/router";
+import Logo from "./Logo";
+import Nav from "./Nav";
 
+// nav data
+export const navData = [
+  { name: 'home', path: '/', icon: <HiHome /> },
+  { name: 'about', path: '/about', icon: <HiUser /> },
+  { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
+  { name: 'work', path: '/work', icon: <HiViewColumns /> },
+  {
+    name: 'contact',
+    path: '/contact',
+    icon: <HiEnvelope />,
+  },
+];
 
 const Header = () => {
-  const router = useRouter();
-  const pathName = router.pathname;
-  return <header className="">
-    <nav className='bg-white/10'>
-      <div className="container mx-auto ">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8">
-          {/* Logo */}
-          <Link href={"/"} >Shai Nir</Link>
-          <Socials />
 
+  return <header className="absolute z-30 w-full h-[130px]">
+    <nav className='bg-primary/50 shadow-xl h-full relative'>
+      <div className="container mx-auto ">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 ">
+          <Nav />
+          {/* Logo */}
+          <Logo />
+          <Socials />
         </div>
       </div>
     </nav>

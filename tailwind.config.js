@@ -22,9 +22,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#1B262C',
-        secondary: '#0F4C75',
-        accent: '#BBE1FA',
+        primary: '#010101',
+        secondary: '#5ada86',
+        special: '#834cab',
+        grey: '#b0b0b0',
+        accent: '#01d449',
       },
       backgroundImage: {
         site: 'url("/site-bg.svg")',
