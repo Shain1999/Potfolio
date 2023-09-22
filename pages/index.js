@@ -12,9 +12,9 @@ import { fadeIn } from "../variants"
 
 
 const Home = () => {
-  return <div className="bg-primary/60 h-full">
+  return <div className="bg-primary/60 h-full ">
     {/* text */}
-    <div className="w-full h-full bg-gradient-to-r from-primary/50 via-secondary/20">
+    <div className="w-full h-full bg-gradient-to-r from-primary/50 via-secondary/30 relative">
       <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto ">
         {/* title */}
         <motion.h1
@@ -28,6 +28,7 @@ const Home = () => {
           <span className="text-accent">Full Stack Developer <br /></span>
           Getting your project done
         </motion.h1>
+
         {/* subtitle */}
         <motion.p
           variants={fadeIn('up', 0.1)}

@@ -29,7 +29,7 @@ module.exports = {
         accent: '#01d449',
       },
       backgroundImage: {
-        site: 'url("/site-bg.svg")',
+        site: 'url("/bgImg.jpg")',
       },
       animation: {
         'spin-slow': 'spin 6s linear infinite',

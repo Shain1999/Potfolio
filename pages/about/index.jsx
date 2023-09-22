@@ -80,7 +80,7 @@ const About = () => {
   };
 
   return (
-    <div className="h-full text-center xl:text-left mx-auto w-full bg-secondary/5">
+    <div className="h-full text-center xl:text-left mx-auto w-full bg-primary/40">
       <div className="container h-full py-32 text-center xl:text-left mx-auto w-full ">
         <div className="flex flex-1 flex-col gap-x-2 min-w-[500px] min-h-[100px] items-center"></div>
         <div className="mx-auto flex xl:flex-row flex-col items-center gap-x-6">
