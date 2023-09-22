@@ -14,7 +14,7 @@ import { fadeIn } from "../variants"
 const Home = () => {
   return <div className="bg-primary/60 h-full ">
     {/* text */}
-    <div className="w-full h-full bg-gradient-to-r from-primary/50 via-secondary/30 relative">
+    <div className="w-full h-full bg-gradient-to-r from-primary/60 from-80% via-secondary/30 to-accent/10 relative">
       <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto ">
         {/* title */}
         <motion.h1
@@ -35,10 +35,14 @@ const Home = () => {
           initial='hidden'
           animate="show"
           exit="hidden"
-          className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">lorem ipsum test something letters emmet not working fro some reason Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, corporis ipsa rem commodi eveniet consectetur. Sapiente architecto harum exercitationem eum?</motion.p>
+          className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">As an experienced web developer with a strong background in secure API creation and both front and back-end development, I am committed to crafting exceptional web experiences. My lifelong passion for web design drives me to create unforgettable websites. My primary goal is to ensure client satisfaction while expanding my client base and fostering valuable connections</motion.p>
         {/* btn */}
         <motion.div variants={fadeIn('down', 0)} initial="hidden" animate="show" exit={"hidden"} className="justify-center relative flex"><ProjectsBtn /></motion.div>
+        <div>
+
+        </div>
       </div>
+
     </div>
   </div >
 };

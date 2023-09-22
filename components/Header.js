@@ -29,8 +29,8 @@ export const navData = [
 
 const Header = () => {
 
-  return <header className="absolute z-30 w-full h-[130px]">
-    <nav className='bg-primary/50 shadow-xl h-full relative'>
+  return <header className="absolute z-30 w-full h-[100px]">
+    <nav className='bg-primary/80 shadow-xl h-full relative'>
       <div className="container mx-auto ">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 ">
           <Nav />
