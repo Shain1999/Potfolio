@@ -15,7 +15,7 @@ const sora = Sora({
 //comps
 import Header from "../components/Header"
 const Layout = ({ children }) => {
-  return <div className={`page bg-primary/90 bg-blend-difference text-white  bg-site bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
+  return <div className={`page bg-primary text-white  ${sora.variable} font-sora relative`}>
     <Header />
     {children}
   </div>;

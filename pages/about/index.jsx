@@ -4,18 +4,22 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaFigma,
   FaNodeJs,
+  FaAngular,
 } from "react-icons/fa";
-
+import { Carousel } from "flowbite-react";
 import {
+  SiJquery,
+  SiCsharp,
+  SiFlutter,
+  SiPython,
+  SiAxios,
   SiNextdotjs,
   SiDotnet,
   SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
   SiMicrosoftsqlserver,
   SiMongodb,
+  SiReact,
 } from "react-icons/si";
 
 //  data
@@ -25,21 +29,41 @@ const aboutData = [
     title: "skills",
     info: [
       {
-        title: "Web Development",
+        title: "Programming Languages",
         icons: [
-          <FaHtml5 />,
-          <SiDotnet />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaNodeJs />,
+          { icon: <FaJs />, name: "JavaScript" },
+          { icon: <SiPython />, name: "Python" },
+          { icon: <SiCsharp />, name: "C#" },
         ],
       },
       {
-        title: "BackEnd",
-        icons: [<SiMicrosoftsqlserver />, <SiMongodb />],
+        title: "Front end",
+        icons: [
+          { icon: <FaHtml5 />, name: "HTML5" },
+          { icon: <FaAngular />, name: "Angular.js" },
+          { icon: <SiJquery />, name: "Jquery" },
+          { icon: <FaCss3 />, name: "CSS3" },
+          { icon: <FaReact />, name: "React.js" },
+          { icon: <SiNextdotjs />, name: "Next.js" },
+          { icon: <SiFramer />, name: "Framer" },
+        ],
+      },
+      {
+        title: "Back End",
+        icons: [
+          { icon: <SiMicrosoftsqlserver />, name: "Microsoft SQL Server" },
+          { icon: <SiMongodb />, name: "MongoDB" },
+          { icon: <SiDotnet />, name: "Dotnet" },
+          { icon: <SiAxios />, name: "Axios" },
+          { icon: <FaNodeJs />, name: "Node.js" },
+        ],
+      },
+      {
+        title: "Mobile",
+        icons: [
+          { icon: <SiFlutter />, name: "Flutter" },
+          { icon: <SiReact />, name: "React Native" },
+        ],
       },
     ],
   },
@@ -80,24 +104,17 @@ const About = () => {
   };
 
   return (
-    <div className="h-full text-center xl:text-left mx-auto w-full bg-primary/40">
-      <div className="container h-full py-32 text-center xl:text-left mx-auto w-full ">
+    <div className="h-full text-center xl:text-left mx-auto w-full ">
+      <div className="container h-full py-5 text-center xl:text-left mx-auto w-full  ">
         <div className="flex flex-1 flex-col gap-x-2 min-w-[500px] min-h-[100px] items-center"></div>
-        <div className="mx-auto flex xl:flex-row flex-col items-center gap-x-6">
+        <div className="mx-auto flex flex-col items-center gap-x-6">
           <motion.div
             variants={fadeIn("up", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
             className="xl:hidden flex flex-col gap-x-2 justify-center items-center "
-          >
-            <Image
-              className="z-60 shadow-2xl rounded-full border-2 border-secondary"
-              src={"/aboutImage.jpg"}
-              width={150}
-              height={200}
-            />
-          </motion.div>
+          ></motion.div>
           <div className="flex-1 flex flex-row justify-center ">
             <motion.div
               variants={fadeIn("right", 0.1)}
@@ -119,14 +136,16 @@ const About = () => {
               </p>
             </motion.div>
           </div>
+          {/* container */}
           <motion.div
             variants={fadeIn("left", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-1 flex-col gap-x-2 min-w-[500px] min-h-[300px] items-center rounded-xl shadow-xl border-secondary/30 border-2"
+            className="flex xl:flex-1 flex-col gap-x-2 items-center rounded-xl shadow-xl border-secondary/30 border-2 w-full"
           >
-            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 px-5 justify-between items-center min-h-[100px]">
+            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 px-5 justify-between items-center min-h-[100px] xl:w-1/2 lg:w-1/2 w-4/5">
+              {/* about links */}
               {aboutData.map((item, itemIndex) => {
                 return (
                   <div
@@ -143,24 +162,37 @@ const About = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col gap-x-1 gap-y-2">
+            <div className="flex flex-col gap-x-1 gap-y-2 w-full px-8 items-center justify-center">
+              {/* info container */}
               {aboutData[selectedIndex].info.map((item, index) => {
                 return (
                   <div
                     key={`info${index}`}
-                    className="flex-1 flex flex-row text-white/60 max-w-max gap-x-2 items-center"
+                    className="group flex flex-col text-white/60 gap-x-10 items-center w-[90%] py-7 xl:px-20 
+                    hover:scale-110 transition-all duration-400 ease-in hover:bg-grey/10 hover:rounded-sm"
                   >
                     {/* title */}
-                    <div>
+                    <div className="lg:text-2xl text-xl pb-4 group-hover:text-accent">
                       {item.title}
                       <div className="hidden lg:flex md:flex">{item.stage}</div>
                     </div>
                     {/* icons */}
-                    {item.icons?.map((icon, iconIndex) => {
-                      return (
-                        <div className="text-2xl text-secondary">{icon}</div>
-                      );
-                    })}
+                    <div className="grid grid-cols-3 xl:grid-cols-5 w-full gap-x-1 gap-y-5 place-items-center">
+                      {item.icons?.map((icon, iconIndex) => {
+                        return (
+                          <div className="flex flex-col items-center text-white/60 justify-center hover:text-accent transition-all duration-300 hover:scale-125 hover:animate-jello ">
+                            <div className="xl:text-6xl text-5xl pb-1">
+                              {/* icon */}
+                              {icon.icon}
+                            </div>
+                            <div className="flex items-center text-center xl:text-xl lg:text-lg md:text-md sm:text-sm">
+                              {/* name */}
+                              {icon.name}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 );
               })}
